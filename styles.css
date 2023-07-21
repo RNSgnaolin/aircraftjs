@@ -191,3 +191,15 @@ h3 {
     font-style: normal;
     margin: 2px;
 }
+
+.records {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    place-content: center;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
