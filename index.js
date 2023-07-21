@@ -3,18 +3,6 @@ let numberOfEvidence = 0;
 let numberOfCharges = 0;
 setInterval(getTime, 1000);
 
-function gotoAircraft() {
-    window.open("links/aircraft.html");
-}
-function gotoGround() {
-    window.open("links/ground.html");
-}
-function gotoWarrant() {
-    window.open("links/warrant.html");
-}
-function gotoDatabase() {
-    window.open("links/records.html");
-}
 function getTime() {
     let losSantosHour = new Date().toUTCString();
     document.getElementById("currentLSHour").innerHTML = losSantosHour.slice(5, 25);

@@ -95,7 +95,22 @@ h3 {
     row-gap: 50px;
     text-align: center;
     font-size: inherit;
+    margin-top: 50px;
 }
+
+    .buttons .navigation-button {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        border: 1px solid rgb(150, 150, 150);
+        border-radius: 5px;
+        padding: 10px;
+        background-color: rgb(200, 200, 200);
+    }
+
+        .buttons .navigation-button:hover {
+            background-color: rgb(175, 175, 175);
+        }
 
 .links {
     display: grid;
