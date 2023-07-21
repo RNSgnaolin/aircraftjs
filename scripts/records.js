@@ -1,14 +1,36 @@
-/**
- * Function for looking up the Aircrafts array and showing the result on the page
- */
+// Declaration of pure text that will be recycled in every cycle of forEach
+
+const regname = document.createElement("div");
+regname.setAttribute("class", "bold");
+regname.innerText = "Name:";
+
+const regph = document.createElement("div");
+regph.setAttribute("class", "bold");
+regph.innerText = "Phone:";
+
+const tailnumber = document.createElement("div");
+tailnumber.setAttribute("class", "bold");
+tailnumber.innerText = "Tail number:";
+
+const callsign = document.createElement("div");
+callsign.setAttribute("class", "bold");
+callsign.innerText = "Callsign:";
+
+const agencytype = document.createElement("div");
+agencytype.setAttribute("class", "bold");
+agencytype.innerText = "Agency Type:";
+
+const agencyname = document.createElement("div");
+agencyname.setAttribute("class", "bold");
+agencyname.innerText = "Agency Name:";
+
+const aircraftmodel = document.createElement("div");
+aircraftmodel.setAttribute("class", "bold");
+aircraftmodel.innerText = "Aircraft Type & Model:";
+
 function findAircraft() {
-    // we clear the previous results first
     clearResults();
-    
-    // reading the searchPattern from the input field
     let searchPattern = document.getElementById("searchPattern").value;
-    
-    // filtering the aircrafts array, trying to find the searchPattern fragment in callsign/tailNumber properties
     let matchingRecords = aircrafts.filter(
         aircraft => {
             if (aircraft.callsign) {
@@ -24,32 +46,44 @@ function findAircraft() {
             return false;
         });
 
-    // if there's nothing to show, we print a notification on the screen and return
     if (matchingRecords.length < 1) {
-        document.getElementById("results").innerHTML = "No aircrafts found, please try again";
+        document.getElementById("results").innerHTML = "<div class='box'><div class='title'>NO MATCHES FOUND</div</div>";
         return;
     }
 
-    // print the results on the page
     matchingRecords.forEach((aircraft => {
         var element = document.createElement("div");
         element.setAttribute("id", `aircraft${aircraft.aircraftId}`);
+        element.setAttribute("class", "recordBox");
 
-        var id = document.createElement("p");
-        id.innerText = `Aircraft ID: ${aircraft.aircraftId}`;
-        element.appendChild(id);
+        element.appendChild(regname);
 
-        var tailnumber = document.createElement("p");
-        tailnumber.innerText = `Tailnumber: ${aircraft.tailNumber}`;
+        var regname2 = document.createElement("div");
+        regname2.innerText = `${aircraft.regName}`;
+        element.appendChild(regname2);
+
+        element.appendChild(regph);
+
+        var regph2 = document.createElement("div");
+        regph2.innerText = `${aircraft.regPH}`;
+        element.appendChild(regph2);
+
         element.appendChild(tailnumber);
+
+        var tailnumber2 = document.createElement("div");
+        tailnumber2.innerText = `${aircraft.tailNumber}`;
+        element.appendChild(tailnumber2);
+
+        element.appendChild(callsign);
+
+        var callsign2 = document.createElement("div");
+        callsign2.innerText = `${aircraft.callsign}`;
+        element.appendChild(callsign2);
 
         document.getElementById("results").appendChild(element);
     }));
 }
 
-/**
- * Function to clear the results from the page
- */
 function clearResults() {
     document.getElementById("results").innerHTML = "";
 }
