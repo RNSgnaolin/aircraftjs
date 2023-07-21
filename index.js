@@ -1,17 +1,5 @@
 let numberOfEvidence = 0;
 
-function gotoAircraft() {
-    window.open("links/aircraft.html");
-}
-function gotoGround() {
-    window.open("links/ground.html");
-}
-function gotoWarrant() {
-    window.open("links/warrant.html");
-}
-function gotoDatabase() {
-    window.open("links/records.html");
-}
 function onLoad() {
     startClock();
 }
