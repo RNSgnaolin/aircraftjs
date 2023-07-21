@@ -1,5 +1,3 @@
-// Declaration of pure text that will be recycled in every cycle of forEach
-
 function callText(text) {
     let textElement = document.createElement("span");
     textElement.setAttribute("class", "bold");
@@ -9,6 +7,7 @@ function callText(text) {
 
 function findAircraft() {
     clearResults();
+    let i = 0;
     let searchPattern = document.getElementById("searchPattern").value;
     let matchingRecords = aircrafts.filter(
         aircraft => {
@@ -31,33 +30,52 @@ function findAircraft() {
     }
 
     matchingRecords.forEach((aircraft => {
+        i++;
         var element = document.createElement("div");
-        element.setAttribute("id", `aircraft${aircraft.aircraftId}`);
+        element.setAttribute("id", `aircraft${i}`);
         element.setAttribute("class", "recordBox");
 
-        element.appendChild(callText("Name:"));
+        element.appendChild(callText("Registrant:"));
 
-        var regname2 = document.createElement("span");
-        regname2.innerText = `${aircraft.regName}`;
-        element.appendChild(regname2);
+        var regname = document.createElement("span");
+        regname.innerText = `${aircraft.regName}`;
+        element.appendChild(regname);
 
-        element.appendChild(callText("Phone:"));
+        element.appendChild(callText("Phone number:"));
 
-        var regph2 = document.createElement("span");
-        regph2.innerText = `${aircraft.regPH}`;
-        element.appendChild(regph2);
+        var regph = document.createElement("span");
+        regph.innerText = `${aircraft.regPH}`;
+        element.appendChild(regph);
 
         element.appendChild(callText("Tail number:"));
 
-        var tailnumber2 = document.createElement("span");
-        tailnumber2.innerText = `${aircraft.tailNumber}`;
-        element.appendChild(tailnumber2);
+        var tailnumber = document.createElement("span");
+        tailnumber.innerText = `${aircraft.tailNumber}`;
+        element.appendChild(tailnumber);
 
         element.appendChild(callText("Callsign:"));
 
-        var callsign2 = document.createElement("span");
-        callsign2.innerText = `${aircraft.callsign}`;
-        element.appendChild(callsign2);
+        var callsign = document.createElement("span");
+        callsign.innerText = `${aircraft.callsign}`;
+        element.appendChild(callsign);
+
+        element.appendChild(callText("Agency Name:"));
+
+        var agencyname = document.createElement("span");
+        agencyname.innerText = `${aircraft.agency}`;
+        element.appendChild(agencyname);
+
+        element.appendChild(callText("Agency Type:"));
+
+        var agencytype = document.createElement("span");
+        agencytype.innerText = `${aircraft.agencyType}`;
+        element.appendChild(agencytype);
+
+        element.appendChild(callText("Aircraft Model:"));
+
+        var aircraftmodel = document.createElement("span");
+        aircraftmodel.innerText = `${aircraft.aircraftModel}`;
+        element.appendChild(aircraftmodel);
 
         document.getElementById("results").appendChild(element);
     }));
