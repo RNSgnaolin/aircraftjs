@@ -1,17 +1,46 @@
-<html>
-    <head>
-        <script src="../data/saaa_db-air.js" type="text/javascript"></script>
-        <script src="../scripts/records.js" type="text/javascript"></script>
-    </head>
+<!DOCTYPE html>
 
-    <body>
-        <h1>Find Aircraft by callsign or tailnumber</h1>
-        <input type="text" id="searchPattern" placeholder="Callsign/Tailnumber" />
-        <button id="search" onclick="findAircraft();">Search</button>
-        <button id="clear" onclick="clearResults();">Clear results</button>
+<head>
+    <script src="../index.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.png" />
+    <title>Aircraft Records - San Andreas Aviation Administration</title>
+    <meta charset="UTF-8" />
+</head>
 
-        <div id="results">
-
+<body onload="onLoad()">
+    <header>
+        <a href="../index.html"><img src="../images/saaa.png" height="100" width="100" alt="logo" /></a>
+        <h1>SAN ANDREAS AVIATION ADMINISTRATION</h1>
+        <h2>Aircraft Records</h2>
+        <h3>
+            <div class="links">
+                <a href="../index.html">Home</a>
+                <a href="aircraft.html">Aircraft Report</a>
+                <a href="ground.html">Incident Report</a>
+                <a href="warrant.html">Warrant Request</a>
+                <a class="active" href="records.html">Aircraft Records</a>
+            </div>
+        </h3>
+    </header>
+    <br>
+    <div class="outerBox">
+        <div class="box">
+            <div class="title">Find Aircraft by callsign or tailnumber</div>
+            <div class="title"><input type="text" id="searchPattern" placeholder="Callsign/Tailnumber" /></div>
+            <button id="search" onclick="findAircraft();">Search</button>
+            <button id="clear" onclick="clearResults();">Clear results</button>
         </div>
-    </body>
+    </div>
+    <br>
+    <div class="outerBox">
+        <div id="results" class="records">
+        </div>
+    </div>
+    </div>
+    <footer>SAN ANDREAS - <span id="currentLSHour"></span> - &copy; All rights reserved</footer>
+    <script type="text/javascript" src="../scripts/records.js"></script>
+    <script type="text/javascript" src="../data/saaa_db-air.js"></script>
+</body>
+
 </html>
