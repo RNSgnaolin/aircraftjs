@@ -1,7 +1,7 @@
 // Declaration of pure text that will be recycled in every cycle of forEach
 
 function callText(text) {
-    let textElement = document.createElement("div");
+    let textElement = document.createElement("span");
     textElement.setAttribute("class", "bold");
     textElement.innerText = text;
     return textElement;
@@ -26,7 +26,7 @@ function findAircraft() {
         });
 
     if (matchingRecords.length < 1) {
-        document.getElementById("results").innerHTML = "<div class='box'><div class='title'>NO MATCHES FOUND</div</div>";
+        document.getElementById("results").innerHTML = "<div class='box'><div class='title'>NO MATCHES FOUND</div></div>";
         return;
     }
 
