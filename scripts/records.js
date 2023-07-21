@@ -25,7 +25,7 @@ function findAircraft() {
         });
 
     if (matchingRecords.length < 1) {
-        document.getElementById("results").innerHTML = "<div class='box'><div class='title'>NO MATCHES FOUND</div></div>";
+        document.getElementById("results").innerHTML = "<div class=\"box\"><div class=\"title\">NO MATCHES FOUND</div></div>";
         return;
     }
 
