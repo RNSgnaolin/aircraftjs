@@ -37,25 +37,25 @@ function findAircraft() {
 
         element.appendChild(callText("Name:"));
 
-        var regname2 = document.createElement("div");
+        var regname2 = document.createElement("span");
         regname2.innerText = `${aircraft.regName}`;
         element.appendChild(regname2);
 
         element.appendChild(callText("Phone:"));
 
-        var regph2 = document.createElement("div");
+        var regph2 = document.createElement("span");
         regph2.innerText = `${aircraft.regPH}`;
         element.appendChild(regph2);
 
         element.appendChild(callText("Tail number:"));
 
-        var tailnumber2 = document.createElement("div");
+        var tailnumber2 = document.createElement("span");
         tailnumber2.innerText = `${aircraft.tailNumber}`;
         element.appendChild(tailnumber2);
 
         element.appendChild(callText("Callsign:"));
 
-        var callsign2 = document.createElement("div");
+        var callsign2 = document.createElement("span");
         callsign2.innerText = `${aircraft.callsign}`;
         element.appendChild(callsign2);
 
