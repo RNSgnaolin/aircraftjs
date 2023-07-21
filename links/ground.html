@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="../styles.css">
+    </link>
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
+    </link>
+    <script src="../index.js" type="text/javascript"></script>
+    <title>Incident Report - San Andreas Aviation Administration</title>
+</head>
+<meta charset="UTF-8">
+</meta>
+
+<body onload="getTime()">
+    <header>
+        <h1><img src="../images/saaa.png" height="100" width="100" alt="logo"><br>
+            SAN ANDREAS AVIATION ADMINISTRATION</h1>
+        <h2>Incident Report</h2>
+        <h3>
+            <div class="links">
+                <a href="aircraft.html">Aircraft Report</a>
+                <a href="ground.html">Incident Report</a>
+                <a href="warrant.html">Warrant Request</a>
+                <a href="records.html">Aircraft Records</a>
+            </div>
+        </h3>
+    </header>
+    <div class="outerSection">
+        <div class="section">
+            <div class="title">Employee Information</div>
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+            <label for="badge">Badge:</label>
+            <input type="text" id="badge">
+            <label for="rank">Rank:</label>
+            <select id="rank" name="rank" required>
+                <option value="Airport Operations Officer" selected>Airport Operations Officer</option>
+                <option value="Aircraft Mechanic">Aircraft Mechanic</option>
+                <option value="Airport Technician">Airport Technician</option>
+                <option value="Air Traffic Controller">Air Traffic Controller</option>
+                <option value="Flight Instructor">Flight Instructor</option>
+                <option value="Aviation Safety Investigator">Aviation Safety Investigator</option>
+                <option value="Deputy Director">Deputy Director</option>
+                <option value="Director">Director</option>
+            </select>
+        </div>
+        <div class="section">
+            <div class="title">General Information</div>
+            <label for="location">Location:</label>
+            <input type="text" id="location">
+            <label for="date">Date:</label>
+            <input type="text" id="date" placeholder="DD/MMM/YYYY">
+            <label for="hour">Hour:</label>
+            <input type="text" id="hour" placeholder="HH:MM AM/PM">
+        </div>
+        <div class="section">
+            <div class="title">Incident Information</div>
+            <label for="penalCode">Penal Code:</label>
+            <input type="text" id="penalCode" placeholder="N/A">
+        </div>
+        <div class="section">
+            <div class="title">Person of Interest</div>
+            <button onclick="generatePerson()">Generate</button>
+        </div>
+    </div>
+    <br><br>
+    <div class="outerBox" id="peopleOfInterest"></div>
+    <hr>
+    <div class="section">
+        <button class="groundReport" onclick="groundReport()">Generate Report</button>
+    </div>
+    <div class="textArea" id="evidences">
+        <div class="title">Evidence</div>
+        <button onclick="generateEvidence()">Generate Evidence</button>
+    </div>
+    <div class="textArea">
+        <div class="title">Narrative</div>
+        <textarea class="narrative" id="incidentReport" name="incidentReport" rows="10"
+            cols="60">Write narrative here.</textarea>
+    </div>
+    </div>
+    <footer>SAN ANDREAS - <span id="currentLSHour"></span></footer>
+</body>

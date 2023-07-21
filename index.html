@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="styles.css"></link>
+    <link rel="icon" type="image/x-icon" href="favicon.png"></link>
+    <script src="index.js" type="text/javascript"></script>
+    <title>San Andreas Aviation Administration</title>
+</head>
+<body onload="getTime()">
+    <meta charset="UTF-8"></meta>
+<header>
+    <h1><img src="images/saaa.png" height="100" width="100" alt="logo"><br>
+    SAN ANDREAS AVIATION ADMINISTRATION</h1>
+    <h3>103 New Empire Way<br>
+        Los Santos, S.A. 20591</h3>
+</header>
+<br><br>
+    <div class="buttons">
+        <button onclick="gotoAircraft()">
+            <img src="images/plane.png" height="50" width="50" alt="plane"><br>
+            <b>Aircraft Incident</b>
+        </button>
+        <button onclick="gotoGround()">
+            <img src="images/person.png" height="50" width="50" alt="person"><br>
+            <b>Ground Incident</b>
+        </button>
+        <button onclick="gotoWarrant()">
+            <img src="images/law.png" height="50" width="50" alt="law"><br>
+            <b>Warrant Request</b>
+        </button>
+        <button onclick="gotoDatabase()">
+            <img src="images/registration.png" height="50" width="50" alt="register"><br>
+            <b>Aircraft Records</b>
+        </button>
+    </div>
+    <footer>SAN ANDREAS - <span id="currentLSHour"></span></footer>
+</body>

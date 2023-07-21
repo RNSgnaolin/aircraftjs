@@ -1,0 +1,172 @@
+body {
+    background-color: rgb(228, 228, 228);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    background-color: rgb(2, 2, 60);
+    border-bottom: 2px solid black;
+}
+
+footer {
+    background-color: rgb(2, 2, 60);
+    margin-top: auto;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 4px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(235, 235, 134);
+    margin-top: 2px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h2 {
+    font-size: 15px;
+    text-align: center;
+    color: rgb(235, 235, 134);
+}
+
+a {
+    color: rgb(134, 173, 235);
+}
+
+h3 {
+    font-size: 13px;
+    text-align: center;
+    font-weight: normal;
+    color: rgb(235, 235, 134);
+}
+
+.section {
+    display: grid;
+    grid-template-columns: 130px auto;
+    place-content: center;
+    row-gap: 3px;
+    text-align: justify;
+    font-style: italic;
+}
+
+.outerSection {
+    display: grid;
+    grid-template-columns: auto auto;
+    place-content: center;
+    column-gap: 200px;
+    row-gap: 10px;
+}
+
+.outerBox {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    place-content: center;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    font-style: normal;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    place-content: center;
+    column-gap: 50px;
+    row-gap: 50px;
+    text-align: center;
+    font-size: inherit;
+}
+
+.links {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    place-content: center;
+    column-gap: 50px;
+    text-align: center;
+    font-size: inherit;
+}
+
+.textArea {
+    display: block;
+    text-align: center;
+    grid-template-columns: auto auto;
+}
+
+.narrative {
+    margin-bottom: 10px;
+}
+
+.box {
+    display: inherit;
+    grid-template-columns: auto auto;
+    row-gap: inherit;
+    text-align: justify;
+    width: 300px;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+    background-color: lightgray;
+}
+
+.report {
+    display: grid;
+    grid-template-columns: auto;
+    width: 100px;
+    height: 100px;
+    font-weight: bold;
+    text-align: center;
+    place-content: center;
+    margin-left: 15px;
+}
+
+.groundReport {
+    display: block;
+    place-content: center;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.warrantReport {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-content: center;
+    place-content: center;
+    text-align: center;
+    width: 100px;
+    height: 75px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-left: 350px;
+}
+
+.penalCharge {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+    font-style: normal;
+    margin: 2px;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="../styles.css">
+    </link>
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
+    </link>
+    <script src="../index.js" type="text/javascript"></script>
+    <title>Aircraft Report - San Andreas Aviation Administration</title>
+</head>
+<meta charset="UTF-8">
+</meta>
+
+<body onload="getTime()">
+    <header>
+        <h1><img src="../images/saaa.png" height="100" width="100" alt="logo"><br>
+            SAN ANDREAS AVIATION ADMINISTRATION</h1>
+        <h2>Aircraft Incident Report</h2>
+        <h3>
+            <div class="links">
+                <a href="aircraft.html">Aircraft Report</a>
+                <a href="ground.html">Incident Report</a>
+                <a href="warrant.html">Warrant Request</a>
+                <a href="records.html">Aircraft Records</a>
+            </div>
+        </h3>
+    </header>
+    <div class="outerSection">
+        <div class="section">
+            <div class="title">Employee Information</div>
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+            <label for="badge">Badge:</label>
+            <input type="text" id="badge">
+            <label for="rank">Rank:</label>
+            <select id="rank" name="rank" required>
+                <option value="Airport Operations Officer" selected>Airport Operations Officer</option>
+                <option value="Aircraft Mechanic">Aircraft Mechanic</option>
+                <option value="Airport Technician">Airport Technician</option>
+                <option value="Air Traffic Controller">Air Traffic Controller</option>
+                <option value="Flight Instructor">Flight Instructor</option>
+                <option value="Aviation Safety Investigator">Aviation Safety Investigator</option>
+                <option value="Deputy Director">Deputy Director</option>
+                <option value="Director">Director</option>
+            </select>
+        </div>
+        <div class="section">
+            <div class="title">General Information</div>
+            <label for="text">Location:</label>
+            <input type="text" id="location">
+            <label for="date">Date:</label>
+            <input type="text" id="date" placeholder="DD/MMM/YYYY">
+            <label for="hour">Hour:</label>
+            <input type="text" id="hour" placeholder="HH:MM AM/PM">
+        </div>
+        <div class="section">
+            <div class="title">Incident Information</div>
+            <label for="accidentNo">Accident No.:</label>
+            <input type="text" id="accidentNo">
+            <label for="aircraftMakeModel">Aircraft:</label>
+            <input type="text" id="aircraftMakeModel">
+            <label for="aircraftReg">Registration:</label>
+            <input type="text" id="aircraftReg">
+            <label for="injuries">Injuries:</label>
+            <select id="injuries" required>
+                <option value="Yes" selected>Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+        <div class="section">
+            <div class="title">Aircraft Information</div>
+            <label for="aircraftModel">Model/Series:</label>
+            <input type="text" id="aircraftModel">
+            <label for="aircraftCategory">Category:</label>
+            <input type="text" id="aircraftCategory">
+            <label for="amateurBuilt">Amateur Built:</label>
+            <select id="amateurBuilt" required>
+                <option value="Yes">Yes</option>
+                <option value="No" selected>No</option>
+            </select>
+            <label for="operatorName">Operator:</label>
+            <input type="text" id="operatorName">
+        </div>
+        <div class="section">
+            <div class="title">Meteorological Information</div>
+            <label for="siteCondition">Site Conditions:</label>
+            <input type="text" id="siteCondition">
+            <label for="lightCondition">Light Conditions:</label>
+            <input type="text" id="lightCondition">
+            <label for="observationTime">Observation Time:</label>
+            <input type="text" id="observationTime">
+            <label for="siteDistance">Site Distance:</label>
+            <input type="text" id="siteDistance">
+            <label for="temperature">Temperature:</label>
+            <input type="text" id="temperature">
+            <label for="windSpeed">Wind Speed:</label>
+            <input type="text" id="windSpeed">
+            <label for="flightPlan">Flight Plan:</label>
+            <input type="text" id="flightPlan">
+            <label for="departure">Departure:</label>
+            <input type="text" id="departure">
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination">
+        </div>
+        <div class="section">
+            <div class="title">Injury Information</div>
+            <label for="crewInjuries">Crew:</label>
+            <input type="text" id="crewInjuries">
+            <label for="passengerInjuries">Passenger:</label>
+            <input type="text" id="passengerInjuries">
+            <label for="groundInjuries">Ground:</label>
+            <input type="text" id="groundInjuries">
+            <label for="totalInjuries">Total:</label>
+            <input type="text" id="totalInjuries">
+            <div class="title">Aircraft Information</div>
+            <label for="aircraftDamage">Fatal Damage:</label>
+            <select id="aircraftDamage" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <label for="aircraftFire">Fatal Fire:</label>
+            <select id="aircraftFire" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <label for="aircraftExplosion">Explosion:</label>
+            <select id="aircraftExplosion" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+    </div>
+    <div class="section">
+        <button class="report" onclick="aircraftReport()">Generate Report</button>
+    </div>
+    <br>
+    <hr>
+    <div class="textArea" id="evidences">
+        <div class="title">Evidence</div>
+        <button onclick="generateEvidence()">Generate Evidence</button>
+    </div>
+    <div class="textArea">
+        <div class="title">Narrative</div>
+        <textarea class="narrative" id="incidentReport" name="incidentReport" rows="10"
+            cols="50">Write narrative here.</textarea>
+    </div>
+    </div>
+    <footer>SAN ANDREAS - <span id="currentLSHour"></span></footer>
+</body>
