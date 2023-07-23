@@ -7,7 +7,6 @@ function callText(text) {
 
 function findAircraft() {
     clearResults();
-    let i = 0;
     let searchPattern = document.getElementById("searchPattern").value;
     let matchingRecords = aircrafts.filter(
         aircraft => {
@@ -21,9 +20,18 @@ function findAircraft() {
                     return true;
             }
 
+            if (aircraft.agency) {
+                if (aircraft.agency.indexOf(searchPattern) > -1)
+                return true;
+            }
+
             return false;
         });
+    printResults(matchingRecords);
+}
 
+function printResults(matchingRecords) {
+    let i = 0;
     if (matchingRecords.length < 1) {
         document.getElementById("results").innerHTML = "<div class=\"box\"><div class=\"title\">NO MATCHES FOUND</div></div>";
         return;
