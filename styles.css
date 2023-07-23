@@ -87,6 +87,14 @@ h3 {
     margin-top: 15px;
 }
 
+.centralGrid {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+    place-content: center;
+    margin-bottom: 5px;
+}
+
 .buttons {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -98,19 +106,25 @@ h3 {
     margin-top: 50px;
 }
 
-    .buttons .navigation-button {
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        border: 1px solid rgb(150, 150, 150);
-        border-radius: 5px;
-        padding: 10px;
-        background-color: rgb(200, 200, 200);
-    }
+.buttons .navigation-button {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(200, 200, 200);
+}
 
-        .buttons .navigation-button:hover {
-            background-color: rgb(175, 175, 175);
-        }
+    .buttons .navigation-button:hover {
+        background-color: rgb(175, 175, 175);
+    }
+.buttonOnGrid {
+    margin-left: 40px;
+    place-content: center;
+    text-align: center;
+    width: 75px;
+}
 
 .links {
     display: grid;
@@ -121,11 +135,12 @@ h3 {
     font-size: inherit;
 }
 
-    .links a.active {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-    }
+.links a.active {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 
 .textArea {
     display: block;
@@ -143,6 +158,19 @@ h3 {
     row-gap: inherit;
     text-align: justify;
     width: 300px;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+    background-color: lightgray;
+}
+
+.recordBox {
+    display: inherit;
+    grid-template-columns: auto auto;
+    row-gap: inherit;
+    column-gap: 15px;
+    text-align: justify;
+    width: 375px;
     border: 1px solid black;
     padding: 5px;
     margin: 5px;
