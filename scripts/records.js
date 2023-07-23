@@ -59,6 +59,12 @@ function findAircraft() {
         callsign.innerText = `${aircraft.callsign}`;
         element.appendChild(callsign);
 
+        element.appendChild(callText("Aircraft Type:"));
+
+        var aircrafttype = document.createElement("span");
+        aircrafttype.innerText = `${aircraft.aircraftType}`;
+        element.appendChild(aircrafttype);
+
         element.appendChild(callText("Agency Name:"));
 
         var agencyname = document.createElement("span");
