@@ -48,7 +48,10 @@ function aircraftReport() {
             evidenceList[i] = document.getElementById('evidence' + i).value;
         }
     }
-    const incidentReport = document.getElementById("incidentReport").value;
+    let incidentReport = document.getElementById("incidentReport").value;
+    if (incidentReport.indexOf("\n") > -1) {
+        incidentReport = document.getElementById("incidentReport").value.replaceAll("\n", "<br />\r\n");
+    }
     const aircraftMake = aircraftMakeModel.split(" ");
     document.open();
     document.write("[divbox=white]<br>");
