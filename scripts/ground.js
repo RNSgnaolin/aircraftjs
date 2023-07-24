@@ -36,7 +36,10 @@ function groundReport() {
             evidenceList[i] = document.getElementById('evidence' + i).value;
         }
     }
-    const incidentReport = document.getElementById("incidentReport").value;
+    let incidentReport = document.getElementById("incidentReport").value;
+    if (incidentReport.indexOf("\n") > -1) {
+        incidentReport = document.getElementById("incidentReport").value.replaceAll("\n", "<br />\r\n");
+    }
     document.open();
     document.write("[divbox=white][center][saaa=150][/saaa]<br><br>");
     document.write("[size=125][b]AVIATION ADMINISTRATION<br>");
@@ -44,13 +47,12 @@ function groundReport() {
     document.write("[i]A Passion for Safety[/i][/size]<br><br>");
     document.write("[size=110][u]INCIDENT REPORT[/u][/size][/center][hr][/hr]<br><br>");
     document.write("[font=arial][color=black][size=105][b]Filing Information[/b][/size]<br><br>");
-    document.write("[indent]<br>");
     document.write("[b]Time & Date:[/b] ", hour, ", ", date, "<br>");
-    document.write("[b]Penal Code (if Criminal):[/b] ", penalCode, "<br>");
+    document.write("[b]Penal Code:[/b] ", penalCode, "<br>");
     document.write("[b]Location:[/b] ", location, "<br><br>");
     document.write("[b]Filed By:[/b] ", rank, " ", name, "<br>");
     document.write("[b]Unit Number:[/b] ", badge, "<br><br><br>");
-    document.write("[size=105][b]Involved Persons[/b][/size]<br>");
+    document.write("[size=105][b]Involved Persons[/b][/size]<br><br>");
     if (numberOfPeople > 0) {
         for (let i = 1; i <= numberOfPeople; i++) {
             document.write("[u]Person #", i, " - ", personNames[i], "[/u]<br>");
@@ -61,20 +63,18 @@ function groundReport() {
         }
     }
     else {
-        document.write("N/A<br>");
+        document.write("N/A<br><br>");
     }
-    document.write("<br><br><br>");
     document.write("[size=105][b]Narrative[/b][/size]<br>");
-    document.write("[indent]", incidentReport, "<br><br>");
+    document.write(incidentReport, "<br><br>");
     document.write("[size=105][b]Evidence[/b][/size]<br>");
     if (numberOfEvidence > 0) {
-        document.write("[list=1]");
         for (let i = 1; i <= numberOfEvidence; i++) {
-            document.write("[*]", evidenceList[i], "<br>");
+            document.write(evidenceList[i], "<br>");
         }
     }
     else {
         document.write("N/A");
     }
-    document.write("[/list][/divbox]")
+    document.write("[/divbox]")
 }
