@@ -5,6 +5,41 @@ function callText(text) {
     return textElement;
 }
 
+function isNumeric(string) {
+    return string.match(/\d/) != null;
+}
+
+function ruleset(tailnumber) {
+    if (tailnumber.length > 6) {
+        return false;
+    }
+    if (!isNumeric(tailnumber.charAt(1))) {
+        return false;
+    }
+    for (let i=2; i<6; i++) {
+        if (!isNumeric(tailnumber.charAt(i))) {
+            if (tailnumber.length > i+2) {
+                return false;
+            }
+            if (isNumeric(tailnumber.charAt(i+1))) {
+                return false;
+            }
+        }
+    }
+    if (tailnumber.charAt(tailnumber.length-2) == "I" || tailnumber.charAt(tailnumber.length-2) == "O") {
+        return false;
+    }
+    return !(tailnumber.charAt(tailnumber.length-1) == "I" || tailnumber.charAt(tailnumber.length-1) == "O");
+}
+
+function tailCompliancy(tailnumber, callsign) {
+    if (tailnumber.startsWith('N') || callsign.startsWith('N')) {
+        if (ruleset(tailnumber)) return true;
+        return ruleset(callsign);
+    }
+    return false;
+}
+
 function findAircraft() {
     clearResults();
     let searchPattern = document.getElementById("searchPattern").value;
@@ -41,7 +76,12 @@ function printResults(matchingRecords) {
         i++;
         var element = document.createElement("div");
         element.setAttribute("id", `aircraft${i}`);
-        element.setAttribute("class", "recordBox");
+        if (tailCompliancy(aircraft.tailNumber, aircraft.callsign)) {
+            element.setAttribute("class", "recordBox");
+        }
+        else {
+            element.setAttribute("class", "recordBoxRed");
+        }
 
         element.appendChild(callText("Registrant:"));
 
