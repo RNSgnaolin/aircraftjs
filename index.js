@@ -13,9 +13,7 @@ function startClock() {
 function setTimeOnClock() {
     let timeElement = document.getElementById("currentLSHour");
     let losSantosHour = new Date().toUTCString();
-    if (timeElement != null) {
-        timeElement.innerHTML = losSantosHour.slice(5, 25);
-    }
+    timeElement.innerHTML = losSantosHour.slice(5, 25);
 }
 function generateEvidence() {
     numberOfEvidence++;
