@@ -116,9 +116,10 @@ h3 {
     background-color: rgb(200, 200, 200);
 }
 
-    .buttons .navigation-button:hover {
-        background-color: rgb(175, 175, 175);
-    }
+.buttons .navigation-button:hover {
+    background-color: rgb(175, 175, 175);
+}
+
 .buttonOnGrid {
     margin-left: 40px;
     place-content: center;
@@ -175,6 +176,19 @@ h3 {
     padding: 5px;
     margin: 5px;
     background-color: lightgray;
+}
+
+.recordBoxRed {
+    display: inherit;
+    grid-template-columns: auto auto;
+    row-gap: inherit;
+    column-gap: 15px;
+    text-align: justify;
+    width: 375px;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+    background-color: rgb(244, 154, 154);
 }
 
 .report {
