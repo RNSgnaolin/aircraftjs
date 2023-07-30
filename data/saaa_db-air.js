@@ -1,5 +1,45 @@
 var aircrafts = [
     {
+        "tailNumber": "N713AB",
+        "callsign": "N/A",
+        "regName": "Charlie Lee",
+        "regPH": "8875",
+        "aircraftType": "Private",
+        "agency": "N/A",
+        "agencyType": "N/A",
+        "aircraftModel": "JoBuilt Velum 5S"
+    },
+    {
+        "tailNumber": "N303FD",
+        "callsign": "FIRE-3",
+        "regName": "N/A",
+        "regPH": "N/A",
+        "aircraftType": "Utility",
+        "agency": "Los Santos Fire Department",
+        "agencyType": "Government",
+        "aircraftModel": "Buckingham Valkyrie"
+    },
+    {
+        "tailNumber": "N961SD",
+        "callsign": "Air 20",
+        "regName": "N/A",
+        "regPH": "N/A",
+        "aircraftType": "Utility",
+        "agency": "Los Santos Sheriff's Department",
+        "agencyType": "Government",
+        "aircraftModel": "Buckingham Maverick"
+    },
+    {
+        "tailNumber": "N22CX",
+        "callsign": "N/A",
+        "regName": "Lauren Wilkerson",
+        "regPH": "35849",
+        "aircraftType": "Private",
+        "agency": "N/A",
+        "agencyType": "N/A",
+        "aircraftModel": "JoBuilt Velum 5S"
+    },
+    {
         "tailNumber": "N609HP",
         "callsign": "N/A",
         "regName": "Lee Linh",
@@ -30,8 +70,8 @@ var aircrafts = [
         "aircraftModel": "JoBuilt Mammatus"
     },
     {
-        "tailNumber": "N738IA",
-        "callsign": "N/A",
+        "tailNumber": "KGQ075",
+        "callsign": "N738IA",
         "regName": "John Pickert",
         "regPH": "27822909",
         "aircraftType": "Commercial",
@@ -66,6 +106,7 @@ var aircrafts = [
         "regPH": "11407467",
         "aircraftType": "Commercial",
         "agency": "Skybound Aviation",
+        "agencyType": "Private",
         "aircraftModel": "JoBuilt Mammatus"
     },
     {
@@ -106,16 +147,6 @@ var aircrafts = [
         "aircraftType": "Commercial",
         "agency": "Skybound Aviation",
         "agencyType": "Private",
-        "aircraftModel": "JoBuilt Velum 5S"
-    },
-    {
-        "tailNumber": "N713AB",
-        "callsign": "N/A",
-        "regName": "Charlie Lee",
-        "regPH": "8875",
-        "aircraftType": "Private",
-        "agency": "N/A",
-        "agencyType": "N/A",
         "aircraftModel": "JoBuilt Velum 5S"
     },
     {
