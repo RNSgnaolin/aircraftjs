@@ -5,37 +5,21 @@ function callText(text) {
     return textElement;
 }
 
-function isNumeric(string) {
-    return string.match(/\d/) != null;
-}
-
-function ruleset(tailnumber) {
-    if (tailnumber.length > 6) {
-        return false;
-    }
-    if (!isNumeric(tailnumber.charAt(1))) {
-        return false;
-    }
-    for (let i=2; i<6; i++) {
-        if (!isNumeric(tailnumber.charAt(i))) {
-            if (tailnumber.length > i+2) {
-                return false;
-            }
-            if (isNumeric(tailnumber.charAt(i+1))) {
-                return false;
-            }
-        }
-    }
-    if (tailnumber.charAt(tailnumber.length-2) == "I" || tailnumber.charAt(tailnumber.length-2) == "O") {
-        return false;
-    }
-    return !(tailnumber.charAt(tailnumber.length-1) == "I" || tailnumber.charAt(tailnumber.length-1) == "O");
+function ruleset(string) {
+    const regex = /^N[1-9]((\d{0,4})|(\d{0,3}[A-HJ-NP-Z])|(\d{0,2}[A-HJ-NP-Z]{2}))$/;
+    return regex.test(string);
 }
 
 function tailCompliancy(tailnumber, callsign) {
-    if (tailnumber.startsWith('N') || callsign.startsWith('N')) {
-        if (ruleset(tailnumber)) return true;
-        return ruleset(callsign);
+    if (!ruleset(tailnumber)) return ruleset(callsign);
+    return ruleset(tailnumber);
+}
+
+function policeExempt(tailnumber, agency) {
+    if (tailnumber.indexOf("AIR") > -1) {
+        if (agency == "Los Santos Police Department") return true;
+        if (agency == "Los Santos Sheriff's Department") return true;
+        return agency == "San Andreas Park Rangers";
     }
     return false;
 }
